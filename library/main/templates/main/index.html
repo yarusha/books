@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% block title %}
+BOOKS
+{% endblock %}
+
+{% block content %}
+    {% if books %}
+        {% for el in books %}
+            <div><b>ID: {{ el.id }}</b></div>
+            <div>{% now "Y-m-d, h:i:s" %}</div>
+            <div><b>{{ el.title | truncatewords:20 }}</b></div>
+            <div><b>{{ el.createed }}</b></div>
+            <div><p>{{ el.text | truncatewords:20 }}</p></div>
+            {#            <div>{% lorem 4 w random %}</div>#}
+            {#            <div>{% lorem 4 p random %}</div>#}
+        {% endfor %}
+    {% else %}
+        <h4>No books</h4>
+    {% endif %}
+{% endblock %}
