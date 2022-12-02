@@ -1,4 +1,9 @@
 python3 manage.py
 python3 manage.py runserver
 
+python3 manage.py createsuperuser
+
 pip freeze -> requirements.txt
+
+pip install --user pythonanywhere
+pa_autoconfigure_django.py https://github.com/yarusha/books.git --nuke
